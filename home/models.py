@@ -12,6 +12,11 @@ class Student(models.Model):
     # image=models.ImageField()
     # field=models.FieldFile()
 
-class product(models.Model):
-    pass
+#  product(models.Model):
+#     pass
+# class
 
+
+class Car(models.Model):
+    car_name=models.CharField(max_length=500)
+    speed=models.IntegerField(default=0)
