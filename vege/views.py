@@ -23,5 +23,5 @@ def receipes(request):
         # print(receipe_image)
 
 
-        return redirect('/receipes/')
+        return redirect('/receipeschatc/')
     return render(request, 'receipe.html')
