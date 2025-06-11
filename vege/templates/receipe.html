@@ -1,27 +1,33 @@
 {% extends "base.html" %}
 {% block start %}
 <div class="container mt-5">
+    <form method="POST" enctype="multipart/form-data" class="col-6 mx-auto card p-3 shadow-lg">
+        {% csrf_token %}
+        <h2>Add Recipe</h2>
+        
+        <div class="mb-3">
+            <label class="form-label">Recipe Name</label>
+            <input name="recipe_name" required type="text" class="form-control">
+        </div>
 
+        <div class="mb-3">
+            <label class="form-label">Recipe Description</label>
+            <textarea name="recipe_description" required class="form-control"></textarea>
+        </div>
 
-    <form class="col-6 mx-auto card p-3 shadow-lg">
-  <div class="mb-3">
-    <h2>Add Receipe</h2>
-    <label for="exampleInputEmail1" class="form-label">Receipe Name</label>
-    <input name="receipe_name" required type ="text" class="form-control" >
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">receipe description</label>
-    <textarea name="form-control" required ></textarea>
-  </div>
-  <div class="mb-3">
-    <input type="file" class="form-control" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Add Receipe</button>
-</form>
-<img src="{{ recipe.recipe_image.url }}" alt="Recipe Image" height="200">
+        <div class="mb-3">
+            <label class="form-label">Recipe Image</label>
+            <input type="file" name="recipe_image" class="form-control" required>
+        </div>
 
+        <button type="submit" class="btn btn-primary">Add Recipe</button>
+    </form>
 
+    {% if recipe %}
+        <div class="mt-4">
+            <h4>Uploaded Recipe Image:</h4>
+            <img src="{{ recipe.recipe_image.url }}" alt="Recipe Image" height="200">
+        </div>
+    {% endif %}
 </div>
-
 {% endblock %}
