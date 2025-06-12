@@ -7,27 +7,30 @@
         
         <div class="mb-3">
             <label class="form-label">Recipe Name</label>
-            <input name="recipe_name" required type="text" class="form-control">
+            <input name="receipe_name" required type="text" class="form-control">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Recipe Description</label>
-            <textarea name="recipe_description" required class="form-control"></textarea>
+            <textarea name="receipe_description" required class="form-control"></textarea>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Recipe Image</label>
-            <input type="file" name="recipe_image" class="form-control" required>
+            <label class="form-label">Receipe Image</label>
+            <input type="file" name="receipe_image" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Add Recipe</button>
+        <button type="submit" class="btn btn-primary">Add Receipe</button>
     </form>
 
     {% if recipe %}
         <div class="mt-4">
-            <h4>Uploaded Recipe Image:</h4>
-            <img src="{{ recipe.recipe_image.url }}" alt="Recipe Image" height="200">
+            <h4>Uploaded Receipe Image:</h4>
+            <img src="{{ receipe.receipe_image.url }}" alt="Recipe Image" height="200">
         </div>
     {% endif %}
 </div>
 {% endblock %}
+
+
+{% comment %} for pdf files and other add public media roots with static in settings.py {% endcomment %}

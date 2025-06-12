@@ -22,6 +22,7 @@ from vege.views import *
 urlpatterns = [
     path('',home,name="home"),
     path('receipe/', receipes, name="receipe"),
+    path('delete-receipe/<id>', delete_receipe,name="delete_receipe"),
 
     # path('contact/',contact,name="contact"),
     path('success_page/',success_page,name="success_page"),

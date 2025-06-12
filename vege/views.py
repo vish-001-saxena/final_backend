@@ -8,7 +8,7 @@ def receipes(request):
 
         receipe_image=request.FILES.get('receipe_image')
         receipe_name= data.get('receipe_name')
-        receipe_description=data.get('receipe_desription')
+        receipe_description=data.get('receipe_description')
         
         Receipe.objects.create(
             receipe_image=receipe_image,
@@ -23,5 +23,16 @@ def receipes(request):
         # print(receipe_image)
 
 
-        return redirect('/receipeschatc/')
+        return redirect('/receipe/')
+    queryset=Receipe.objects.all()
+    context={'receipes':queryset}
+
+
+
+
     return render(request, 'receipe.html')
+
+def delete_receipe(request,id):
+    queryset=Receipe.objects.get(id=id)
+    return redirect('/receipes/')
+    # print(id)
