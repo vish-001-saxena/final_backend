@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def home(request):
+# def home(request):
 
-    peoples=[
-        {'name':'abhishek','age':26},
-        {'name':'abhi','age':26},
-        {'name':'shek','age':26},
-        {'name':'bhish','age':26},
-        {'name':'ish','age':26},
+#     peoples=[
+#         {'name':'abhishek','age':26},
+#         {'name':'abhi','age':26},
+#         {'name':'shek','age':26},
+#         {'name':'bhish','age':26},
+#         {'name':'ish','age':26},
 
     ]
     return render(request,"index.html", context={'peoples':peoples} )

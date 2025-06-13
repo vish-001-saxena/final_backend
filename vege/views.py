@@ -34,5 +34,6 @@ def receipes(request):
 
 def delete_receipe(request,id):
     queryset=Receipe.objects.get(id=id)
+    
     return redirect('/receipes/')
     # print(id)
