@@ -18,10 +18,17 @@
     <div class="container py-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="fw-bold">People List</h2>
-            <!-- Search (non-functional for now) -->
-            <form class="d-flex" style="max-width: 300px;">
-                <input type="text" class="form-control" placeholder="Search people...">
+
+            <!-- Search Form -->
+            <form class="d-flex" method="get" action="" style="max-width: 300px;">
+                <label for="search" class="visually-hidden">Search people</label>
+                <input id="search" type="text" name="q" class="form-control" placeholder="Search people..." value="{{ request.GET.q }}">
             </form>
+        </div>
+
+        <!-- Add Person Button -->
+        <div class="mb-3 text-end">
+            <a href="{% url 'add_person' %}" class="btn btn-primary">Add Person</a>
         </div>
 
         {% if people %}
@@ -37,7 +44,7 @@
                         {% for person in people %}
                             <tr>
                                 <td class="text-center">{{ forloop.counter }}</td>
-                                <td>{{ person }}</td>
+                                <td>{{ person.name }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -49,7 +56,9 @@
             </div>
         {% endif %}
 
-        <p class="mt-5 text-muted text-center small">This is a Django tutorial page demonstrating how to display a dynamic list using templates.</p>
+        <p class="mt-5 text-muted text-center small">
+            This is a Django tutorial page demonstrating how to display a dynamic list using templates.
+        </p>
     </div>
 
 </body>
