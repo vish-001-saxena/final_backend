@@ -26,14 +26,13 @@ def receipes(request):
         return redirect('/receipe/')
     queryset=Receipe.objects.all()
     context={'receipes':queryset}
-
-
-
-
     return render(request, 'receipe.html')
 
 def delete_receipe(request,id):
     queryset=Receipe.objects.get(id=id)
     
     return redirect('/receipes/')
+
+# return render(request, 'receipes.html')
+
     # print(id)
