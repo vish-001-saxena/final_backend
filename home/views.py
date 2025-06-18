@@ -14,6 +14,6 @@ def home(request):
     ]
     return render(request,"index.html", context={'peoples':peoples} )
 
-def success_page(requst):
+def success_page(request):
     # print("*" *10)
     return HttpResponse("<h1>this is second page</h1>")
